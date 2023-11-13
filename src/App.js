@@ -1,25 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import Quiz from "./Components/Quiz/Quiz";
+import Loading from "./Components/Loading/Loading";
+import Error from "./Components/Error/Error";
+import Container from "./Components/Container/Container";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+ 
+
+  return <div className="App">hey world, hey!!!</div>;
 }
 
 export default App;
