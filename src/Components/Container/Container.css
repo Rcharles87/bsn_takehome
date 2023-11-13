@@ -1,0 +1,18 @@
+.Container{
+    width: 60vw;
+    height: 80vh;
+    /* background-color: red; */
+    border: 1px solid red;
+}
+
+.Container--scroll{
+    overflow-y: scroll;
+}
+
+.Container--center{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    justify-content: center;
+}
