@@ -1,0 +1,16 @@
+.NewQuizForm__container{
+    display: grid;
+    margin: 0 8px;
+}
+
+.NewQuizForm__container form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #eeeeee63;
+    border-radius: 5px;
+}
+
+.NewQuizForm__container input{
+    margin: 20px;
+}
