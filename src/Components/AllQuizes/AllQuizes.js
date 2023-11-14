@@ -4,7 +4,7 @@ import QuizDatabase from "../../Data/QuizDatabase";
 import QuizCard from "../QuizCard/QuizCard";
 import Game from "../Game/Game";
 
-function AllQuizes({ setLoading }) {
+function AllQuizes({setEditQuizSelected }) {
   const [selectedQuizId, setSelectedQuizId] = useState(0);
 
   const handleQuizSelection = (id) => {
@@ -19,12 +19,18 @@ function AllQuizes({ setLoading }) {
 
   const renderedContent = () => {
     if (selectedQuizId) {
-      return <Game questionAnswers={dataToDisplay}  setSelectedQuizId={setSelectedQuizId}/>;
+      return (
+        <Game
+          questionAnswers={dataToDisplay}
+          setSelectedQuizId={setSelectedQuizId}
+        />
+      );
     } else {
       return (
         <div className="AllQuizes__content">
-          {QuizDatabase.map((quizData) => (
+          {dataToDisplay.map((quizData) => (
             <QuizCard
+              setEditQuizSelected={setEditQuizSelected}
               key={quizData.id}
               quizData={quizData}
               onClick={() => handleQuizSelection(quizData.id)}
@@ -34,7 +40,6 @@ function AllQuizes({ setLoading }) {
       );
     }
   };
-  // console.log(selectedQuizId, dataToDisplay);
   return <div className="AllQuizes">{renderedContent()}</div>;
 }
 

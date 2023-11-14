@@ -4,9 +4,9 @@ import { Button } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 
-function BackBtn({handleBackBtn}) {
+function BackBtn({handleBackBtn, handleBackBtnNewQuiz, handleEditBackBtn }) {
   return (
-    <Button className='BackBtn' startIcon={<ArrowBackIcon/>} onClick={handleBackBtn}> Back</Button>
+    <Button className='BackBtn' startIcon={<ArrowBackIcon/>} onClick={handleBackBtn || handleEditBackBtn ||handleBackBtnNewQuiz }>Back</Button>
   )
 }
 

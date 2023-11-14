@@ -1,0 +1,16 @@
+.EditForm__container{
+    display: grid;
+    margin: 0 8px;
+}
+
+.EditForm__container form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #eeeeee63;
+    border-radius: 5px;
+}
+
+.EditForm__container input{
+    margin-bottom: 20px;
+}
