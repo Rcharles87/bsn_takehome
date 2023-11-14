@@ -1,20 +1,28 @@
 import React from 'react'
 import './Game.css'
+import BackBtn from '../NavButtons/BackBtn'
+import { Button } from '@mui/material'
 
-function Game({questionAnswers}) {
+function Game({questionAnswers, setSelectedQuizId}) {
 let qAndAKey = questionAnswers.questions_answers
-// let questions = qAndAKey.map((questions)=>(questions.text))
 
+const handleBackBtn = () => {
+  setSelectedQuizId(0)
+}
+ 
 
 console.log(qAndAKey)
 
   return (
     <div className='Quiz__container'>
+     <BackBtn handleBackBtn={handleBackBtn}/>
+
         {qAndAKey.map((question, index)=>(
             <div className='Quiz__data' key={index}>
-                <h2>{question.text}</h2>
+              <h3>Question: {index + 1}</h3>
+                <p>{question.text}?</p>
                 <div className='Quiz__answers'>
-                {question.answers.map((answers)=>(<button key={answers.id}>{answers.text}</button>))}
+                {question.answers.map((answers)=>(<Button variant="contained" size="small" key={answers.id}>{answers.text}</Button>))}
                 </div>
             </div>
         ))}

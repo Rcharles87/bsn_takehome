@@ -4,6 +4,16 @@
     padding-bottom: 10px;
     width: 60vw;
     border-bottom: 1px solid #eee;
+    text-align: center;
+ 
+}
+
+.QuizCard__content p{
+    font-weight: lighter;
+    margin: 0;
+}
+.QuizCard__content h1{
+    text-transform: capitalize;
 }
 
 .QuizCard__content:hover{

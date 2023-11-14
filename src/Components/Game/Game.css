@@ -3,10 +3,24 @@
     margin: 0 10px;
 }
 
+.QuizBackBtn{
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    width: 35px;
+    border-radius: 50%;
+    
+}
+
 .Quiz__data{
 text-align: center;
 border-bottom: 1px solid #eee;
 padding-bottom: 10px;
+}
+
+.Quiz__data p {
+    font-weight: lighter;
+    text-transform: capitalize;
 }
 
 .Quiz__answers{
