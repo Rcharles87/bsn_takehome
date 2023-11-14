@@ -19,7 +19,7 @@ function AllQuizes({ setLoading }) {
 
   const renderedContent = () => {
     if (selectedQuizId) {
-      return <Game questionAnswers={dataToDisplay} />;
+      return <Game questionAnswers={dataToDisplay}  setSelectedQuizId={setSelectedQuizId}/>;
     } else {
       return (
         <div className="AllQuizes__content">
@@ -34,7 +34,7 @@ function AllQuizes({ setLoading }) {
       );
     }
   };
-  console.log(selectedQuizId, dataToDisplay);
+  // console.log(selectedQuizId, dataToDisplay);
   return <div className="AllQuizes">{renderedContent()}</div>;
 }
 
