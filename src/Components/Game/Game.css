@@ -1,0 +1,15 @@
+.Quiz__container{
+    display: grid;
+    margin: 0 10px;
+}
+
+.Quiz__data{
+text-align: center;
+border-bottom: 1px solid #eee;
+padding-bottom: 10px;
+}
+
+.Quiz__answers{
+   display: flex; 
+   justify-content: space-evenly;
+}
