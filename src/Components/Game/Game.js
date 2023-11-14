@@ -5,7 +5,7 @@ import BackBtn from "../NavButtons/BackBtn";
 import { Button } from "@mui/material";
 
 function Game({ questionAnswers, setSelectedQuizId }) {
-  const [selectedAnswer, setSelectedAnswer] = useState();
+  const [selectedAnswer, setSelectedAnswer] = useState("");
   let qAndAKey = questionAnswers.questions_answers;
 
   const handleBackBtn = () => {
@@ -13,7 +13,12 @@ function Game({ questionAnswers, setSelectedQuizId }) {
   };
 
   const handleSelectedAnswers = (e) => {
-    setSelectedAnswer(e.target.value);
+    console.log(e.target.value)
+    if (e.target.value.includes("true")) {
+      setSelectedAnswer(true);
+    } else {
+      setSelectedAnswer(false);
+    }
   };
 
   console.log(qAndAKey, selectedAnswer);
@@ -23,6 +28,7 @@ function Game({ questionAnswers, setSelectedQuizId }) {
       <BackBtn handleBackBtn={handleBackBtn} />
 
       {qAndAKey.map((question, index) => (
+       
         <div className="Quiz__data" key={index}>
           <h3>Question: {index + 1}</h3>
           <p>{question.text}?</p>
@@ -32,17 +38,18 @@ function Game({ questionAnswers, setSelectedQuizId }) {
                 variant="contained"
                 size="small"
                 key={answers.id}
-                value={answers.is_true}
+                value={[answers.is_true, question.id]}
+                index={question.index}
                 onClick={handleSelectedAnswers}
               >
                 {answers.text}
               </Button>
-              
-              // {selectedAnswer ? {answers.feedback_true} : {answers.feedback_false}}
-              ))}
+            ))}
           </div>
+          {selectedAnswer ? question.feedback_true : question.feedback_false}
         </div>
       ))}
+      
     </div>
   );
 }
