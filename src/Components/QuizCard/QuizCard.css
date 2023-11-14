@@ -1,0 +1,12 @@
+.QuizCard__content{
+    display: grid;
+    justify-content: center;
+    padding-bottom: 10px;
+    width: 60vw;
+    border-bottom: 1px solid #eee;
+}
+
+.QuizCard__content:hover{
+    background-color: rgba(0, 0, 0, 0.105);
+
+}

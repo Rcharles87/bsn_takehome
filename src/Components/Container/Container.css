@@ -1,8 +1,8 @@
 .Container{
     width: 60vw;
     height: 80vh;
-    /* background-color: red; */
-    border: 1px solid red;
+    background-color: #fff;
+    border-radius: 5px;
 }
 
 .Container--scroll{
