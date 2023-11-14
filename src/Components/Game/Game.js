@@ -1,4 +1,5 @@
 import React from 'react'
+import './Game.css'
 
 function Game({questionAnswers}) {
 let qAndAKey = questionAnswers.questions_answers
@@ -8,11 +9,11 @@ let qAndAKey = questionAnswers.questions_answers
 console.log(qAndAKey)
 
   return (
-    <div>
+    <div className='Quiz__container'>
         {qAndAKey.map((question, index)=>(
-            <div key={index}>
+            <div className='Quiz__data' key={index}>
                 <h2>{question.text}</h2>
-                <div>
+                <div className='Quiz__answers'>
                 {question.answers.map((answers)=>(<button key={answers.id}>{answers.text}</button>))}
                 </div>
             </div>
